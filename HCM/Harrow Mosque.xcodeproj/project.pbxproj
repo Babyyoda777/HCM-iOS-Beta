@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB04469128A9280E0068BE49 /* adhanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB04469028A9280E0068BE49 /* adhanView.swift */; };
+		BB2BC69A28A64543002F25D7 /* CompassMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BC69928A64540002F25D7 /* CompassMarkerView.swift */; };
+		BB2BC69C28A6455E002F25D7 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BC69B28A6455C002F25D7 /* Marker.swift */; };
+		BB2BC69F28A6645D002F25D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2BC69E28A6645D002F25D7 /* Assets.xcassets */; };
+		BBA205AF28A7CC1E000993B5 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205AC28A7CC1E000993B5 /* ApiServices.swift */; };
+		BBA205B028A7CC1E000993B5 /* SurahDetailServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205AD28A7CC1E000993B5 /* SurahDetailServices.swift */; };
+		BBA205B328A7CE5A000993B5 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205B228A7CE59000993B5 /* QuranView.swift */; };
+		BBA205BB28A7CE93000993B5 /* SurahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205B628A7CE93000993B5 /* SurahModel.swift */; };
+		BBA205BC28A7CE93000993B5 /* DetailSurahModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205B728A7CE93000993B5 /* DetailSurahModel.swift */; };
+		BBDF254728A51DE000643033 /* HarrowMosqueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF254628A51DE000643033 /* HarrowMosqueApp.swift */; };
+		BBDF254928A51DE000643033 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF254828A51DE000643033 /* ContentView.swift */; };
+		BBDF255628A51E1200643033 /* UIOnboardingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF255428A51E1200643033 /* UIOnboardingHelper.swift */; };
+		BBDF255728A51E1200643033 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF255528A51E1200643033 /* OnboardingView.swift */; };
+		BBDF255A28A51E5800643033 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = BBDF255928A51E5800643033 /* UIOnboarding */; };
+		BBDF256228A5240B00643033 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDF256128A5240B00643033 /* Launch Screen.storyboard */; };
+		BBED71E128A55636006C9EA2 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = BBED71E028A55636006C9EA2 /* Adhan */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB04469028A9280E0068BE49 /* adhanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adhanView.swift; sourceTree = "<group>"; };
+		BB2BC69928A64540002F25D7 /* CompassMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassMarkerView.swift; sourceTree = "<group>"; };
+		BB2BC69B28A6455C002F25D7 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		BB2BC69E28A6645D002F25D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB80DEC628A80FDA00762406 /* HCM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA205AC28A7CC1E000993B5 /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		BBA205AD28A7CC1E000993B5 /* SurahDetailServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurahDetailServices.swift; sourceTree = "<group>"; };
+		BBA205B228A7CE59000993B5 /* QuranView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuranView.swift; sourceTree = "<group>"; };
+		BBA205B628A7CE93000993B5 /* SurahModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurahModel.swift; sourceTree = "<group>"; };
+		BBA205B728A7CE93000993B5 /* DetailSurahModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSurahModel.swift; sourceTree = "<group>"; };
+		BBDF254628A51DE000643033 /* HarrowMosqueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarrowMosqueApp.swift; sourceTree = "<group>"; };
+		BBDF254828A51DE000643033 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BBDF255428A51E1200643033 /* UIOnboardingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnboardingHelper.swift; sourceTree = "<group>"; };
+		BBDF255528A51E1200643033 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BBDF256128A5240B00643033 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBDF254028A51DE000643033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBDF255A28A51E5800643033 /* UIOnboarding in Frameworks */,
+				BBED71E128A55636006C9EA2 /* Adhan in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBA205AB28A7CC1E000993B5 /* Web Service */ = {
+			isa = PBXGroup;
+			children = (
+				BBA205AC28A7CC1E000993B5 /* ApiServices.swift */,
+				BBA205AD28A7CC1E000993B5 /* SurahDetailServices.swift */,
+			);
+			path = "Web Service";
+			sourceTree = "<group>";
+		};
+		BBA205B428A7CE93000993B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBA205B628A7CE93000993B5 /* SurahModel.swift */,
+				BBA205B728A7CE93000993B5 /* DetailSurahModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBDF253A28A51DE000643033 = {
+			isa = PBXGroup;
+			children = (
+				BBDF254528A51DE000643033 /* Harrow Mosque */,
+				BB80DEC628A80FDA00762406 /* HCM.app */,
+			);
+			sourceTree = "<group>";
+		};
+		BBDF254528A51DE000643033 /* Harrow Mosque */ = {
+			isa = PBXGroup;
+			children = (
+				BBDF254628A51DE000643033 /* HarrowMosqueApp.swift */,
+				BBA205AB28A7CC1E000993B5 /* Web Service */,
+				BB2BC69928A64540002F25D7 /* CompassMarkerView.swift */,
+				BB2BC69B28A6455C002F25D7 /* Marker.swift */,
+				BBA205B228A7CE59000993B5 /* QuranView.swift */,
+				BBDF254828A51DE000643033 /* ContentView.swift */,
+				BBDF255528A51E1200643033 /* OnboardingView.swift */,
+				BB04469028A9280E0068BE49 /* adhanView.swift */,
+				BBDF255428A51E1200643033 /* UIOnboardingHelper.swift */,
+				BBA205B428A7CE93000993B5 /* Model */,
+				BB2BC69E28A6645D002F25D7 /* Assets.xcassets */,
+				BBDF256128A5240B00643033 /* Launch Screen.storyboard */,
+			);
+			path = "Harrow Mosque";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBDF254228A51DE000643033 /* Again */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBDF255128A51DE100643033 /* Build configuration list for PBXNativeTarget "Again" */;
+			buildPhases = (
+				BBDF253F28A51DE000643033 /* Sources */,
+				BBDF254028A51DE000643033 /* Frameworks */,
+				BBDF254128A51DE000643033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Again;
+			packageProductDependencies = (
+				BBDF255928A51E5800643033 /* UIOnboarding */,
+				BBED71E028A55636006C9EA2 /* Adhan */,
+			);
+			productName = Again;
+			productReference = BB80DEC628A80FDA00762406 /* HCM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBDF253B28A51DE000643033 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					BBDF254228A51DE000643033 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = BBDF253E28A51DE000643033 /* Build configuration list for PBXProject "Harrow Mosque" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBDF253A28A51DE000643033;
+			packageReferences = (
+				BBDF255828A51E5800643033 /* XCRemoteSwiftPackageReference "UIOnboarding" */,
+				BBED71DF28A55636006C9EA2 /* XCRemoteSwiftPackageReference "adhan-swift" */,
+				BBE4260A28AA55780068B75D /* XCRemoteSwiftPackageReference "adhan-swift" */,
+				BBE4260B28AA55930068B75D /* XCRemoteSwiftPackageReference "adhan-swift" */,
+			);
+			productRefGroup = BBDF253A28A51DE000643033;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBDF254228A51DE000643033 /* Again */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBDF254128A51DE000643033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB2BC69F28A6645D002F25D7 /* Assets.xcassets in Resources */,
+				BBDF256228A5240B00643033 /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBDF253F28A51DE000643033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA205BC28A7CE93000993B5 /* DetailSurahModel.swift in Sources */,
+				BBA205B328A7CE5A000993B5 /* QuranView.swift in Sources */,
+				BB2BC69A28A64543002F25D7 /* CompassMarkerView.swift in Sources */,
+				BBA205AF28A7CC1E000993B5 /* ApiServices.swift in Sources */,
+				BBDF255628A51E1200643033 /* UIOnboardingHelper.swift in Sources */,
+				BB04469128A9280E0068BE49 /* adhanView.swift in Sources */,
+				BBA205BB28A7CE93000993B5 /* SurahModel.swift in Sources */,
+				BBDF255728A51E1200643033 /* OnboardingView.swift in Sources */,
+				BBDF254928A51DE000643033 /* ContentView.swift in Sources */,
+				BBDF254728A51DE000643033 /* HarrowMosqueApp.swift in Sources */,
+				BBA205B028A7CC1E000993B5 /* SurahDetailServices.swift in Sources */,
+				BB2BC69C28A6455E002F25D7 /* Marker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BBDF254F28A51DE100643033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBDF255028A51DE100643033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBDF255228A51DE100643033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 279476NR7A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babyyoda777.Prayer;
+				PRODUCT_NAME = HCM;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBDF255328A51DE100643033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 279476NR7A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babyyoda777.Prayer;
+				PRODUCT_NAME = HCM;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBDF253E28A51DE000643033 /* Build configuration list for PBXProject "Harrow Mosque" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBDF254F28A51DE100643033 /* Debug */,
+				BBDF255028A51DE100643033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBDF255128A51DE100643033 /* Build configuration list for PBXNativeTarget "Again" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBDF255228A51DE100643033 /* Debug */,
+				BBDF255328A51DE100643033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBDF255828A51E5800643033 /* XCRemoteSwiftPackageReference "UIOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lascic/UIOnboarding.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		BBE4260A28AA55780068B75D /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/batoulapps/adhan-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		BBE4260B28AA55930068B75D /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/batoulapps/adhan-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		BBED71DF28A55636006C9EA2 /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/batoulapps/adhan-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBDF255928A51E5800643033 /* UIOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBDF255828A51E5800643033 /* XCRemoteSwiftPackageReference "UIOnboarding" */;
+			productName = UIOnboarding;
+		};
+		BBED71E028A55636006C9EA2 /* Adhan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBED71DF28A55636006C9EA2 /* XCRemoteSwiftPackageReference "adhan-swift" */;
+			productName = Adhan;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BBDF253B28A51DE000643033 /* Project object */;
+}

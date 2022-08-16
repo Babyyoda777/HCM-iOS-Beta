@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "adhan-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/batoulapps/adhan-swift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fe8381795e65dc00ca0a584a2e82058f05e371d0"
+      }
+    },
+    {
+      "identity" : "uionboarding",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lascic/UIOnboarding.git",
+      "state" : {
+        "revision" : "36993476b4d15445112e1887aeaae69ee1eabd3f",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
