@@ -43,12 +43,12 @@ struct QuranView: View {
                     }
                 
             }
-            .navigationBarHidden(true)
+            .navigationBarTitle("Qur'an")
             .environment(\.defaultMinListRowHeight, 110)
         }
         .offset(y: -60)
         .padding(.bottom, -20)
-        .padding(.top, 60)
+        .padding(.top, 26)
         
     }
 }

@@ -11,17 +11,14 @@ import UIOnboarding
 import Adhan
 import Combine
 import CoreLocation
+import UserNotifications
 
 let coloredNavAppearance = UINavigationBarAppearance()
 struct ContentView: View {
     init() {
         UITableView.appearance().separatorColor = .clear
         UITableView.appearance().isScrollEnabled = false
-        coloredNavAppearance.backgroundColor = .clear 
-        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
         UITableView.appearance().sectionFooterHeight = 0
-        UINavigationBar.appearance().isTranslucent = true
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init( Color(.green))]
     }
     @State private var showingOnboarding = false
     @State private var selected = 0
@@ -94,8 +91,10 @@ struct ContentView: View {
                                     }
                                   
                                     Section{
-                                        Link("Donate to Harrow Mosque", destination: URL(string: "https://paypal.com/donate/?hosted_button_id=FF9AN9AKM8BXS&source=url")!)
-                                        Link("Find out more about me!", destination: URL(string: "https://babyyoda777.github.io")!)
+                                        Link("Donate to Harrow Mosque  \(Image(systemName: "link"))", destination: URL(string: "https://paypal.com/donate/?hosted_button_id=FF9AN9AKM8BXS&source=url")!)
+                                            .foregroundColor(.primary)
+                                        Link("Find out more about me!  \(Image(systemName: "link"))", destination: URL(string: "https://babyyoda777.github.io")!)
+                                            .foregroundColor(.primary)
                                     }
                                 }
                                 .navigationTitle("Settings")
@@ -139,36 +138,37 @@ struct FloatingTabbar : View {
                         Button(action: {
                             self.selected = 0
                         }) {
-                            Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .green : .primary).padding(.horizontal)
+                            Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
                         }
                         
-                        Spacer(minLength: 27)
+                        Spacer(minLength: 25)
                         
                         Button(action: {
                             self.selected = 1
                         }) {
-                            Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .green : .primary).padding(.horizontal)
+                            Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
                         }
                         
-                        Spacer(minLength: 27)
+                        Spacer(minLength: 25)
                         
                         Button(action: {
                             self.selected = 2
                         }) {
-                            Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .green : .primary).padding(.horizontal)
+                            Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .init("title") : .primary).padding(.horizontal) .font(.system(size: 18))
                         }
                         
-                        Spacer(minLength: 27)
+                        Spacer(minLength: 25)
                         
                         Button(action: {
                             self.selected = 3
                         }) {
-                            Image(systemName: "gearshape.fill").foregroundColor(self.selected == 3 ? .green : .primary).padding(.horizontal)
+                            Image(systemName: "gearshape.fill").foregroundColor(self.selected == 3 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
                         }
                     }
                 }.padding(.vertical,self.expand ? 20 : 8)
                     .padding(.horizontal,self.expand ? 27 : 8)
                     .background(.ultraThinMaterial)
+                    .background(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing).opacity(0.23))
                     .cornerRadius(15)
                     .padding(22)
                 
@@ -283,3 +283,4 @@ struct ContentView_Previews: PreviewProvider {
     
     
 }
+
