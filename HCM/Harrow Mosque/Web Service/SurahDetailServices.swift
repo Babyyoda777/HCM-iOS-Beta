@@ -1,8 +1,8 @@
 //
 //  SurahDetailServices.swift
-//  QuranOnline
+//  Harrow Mosque
 //
-//  Created by Achmad Rifqi on 05/04/22.
+//  Created by Muhammad Shah on 12/08/2022.
 //
 
 import Foundation

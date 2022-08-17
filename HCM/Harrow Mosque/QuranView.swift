@@ -11,6 +11,7 @@ struct QuranView: View {
     @ObservedObject var dataSurah = ApiServices()
     var body: some View {
         NavigationView{
+            if #available(iOS 15.0, *){
             List{
                 
                     ForEach(dataSurah.surahData){
@@ -18,11 +19,12 @@ struct QuranView: View {
                         Section{
                         NavigationLink(destination : SurahDetail(number: surah.number,title: surah.englishName)){
                             HStack(spacing : 14){
-                                Text("\(surah.number)")
-                                    .foregroundColor(Color.primary)
-                                    .frame(width : 45, height: 45)
-                                    .background(.ultraThinMaterial)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                                    Text("\(surah.number)")
+                                        .foregroundColor(Color.primary)
+                                        .frame(width : 45, height: 45)
+                                        .background(.ultraThinMaterial)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
                                 VStack(alignment : .leading, spacing: 4){
                                     Text("\(surah.name)")
                                         .font(.headline)
@@ -45,6 +47,44 @@ struct QuranView: View {
             }
             .navigationBarTitle("Qur'an")
             .environment(\.defaultMinListRowHeight, 110)
+            .listStyle(InsetGroupedListStyle()) 
+            .environment(\.horizontalSizeClass, .regular)
+            }else{
+                
+                List{
+
+                        ForEach(dataSurah.surahData){
+                            surah in
+                            Section{
+                            NavigationLink(destination : SurahDetail(number: surah.number,title: surah.englishName)){
+                                HStack(spacing : 14){
+                                         Text("\(surah.number)")
+                                             .foregroundColor(Color.primary)
+                                             .frame(width : 45, height: 45)
+                                             .clipShape(RoundedRectangle(cornerRadius: 10))
+                                     
+                                    VStack(alignment : .leading, spacing: 4){
+                                        Text("\(surah.name)")
+                                            .font(.headline)
+                                        Text("Surah \(surah.englishName)・\(surah.revelationType)")
+                                            .font(.caption)
+                                    }
+                                }
+                            }
+                        }
+                        }
+                        .padding([.leading, .trailing], 15)
+                        if (dataSurah.isLoading){
+                            VStack{
+                                Indicator()
+                                Text("Loading...")
+                            }
+                            .shadow(color: Color.secondary.opacity(0.3), radius: 20)
+                        }
+                    
+                }
+            
+            }
         }
         .offset(y: -60)
         .padding(.bottom, -20)
@@ -126,27 +166,49 @@ struct SurahDetail : View{
                                     
                                     
                                 }){
-                                    
-                                    if (data.id == playButtonId &&
-                                        soundManager.isPlaying == true){
-                                        HStack{
-                                            Image(systemName: "pause.fill")
-                                            Text("Audio")
+                                    if #available(iOS 15.0, *) {
+                                        if (data.id == playButtonId &&
+                                            soundManager.isPlaying == true){
+                                            HStack{
+                                                Image(systemName: "pause.fill")
+                                                Text("Audio")
+                                            }
+                                            .padding([.top, .bottom], 5)
+                                            .padding([.leading, .trailing], 14)
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(RoundedRectangle(cornerRadius: 7))
+                                        }else{
+                                            HStack{
+                                                Image(systemName: "play.fill")
+                                                Text("Audio")
+                                            }
+                                            .padding([.top, .bottom], 5)
+                                            .padding([.leading, .trailing], 14)
+                                            .background(.ultraThinMaterial)
+                                            .clipShape(RoundedRectangle(cornerRadius: 7))
                                         }
-                                        .padding([.top, .bottom], 5)
-                                        .padding([.leading, .trailing], 14)
-                                        .background(.ultraThinMaterial)
-                                        .clipShape(RoundedRectangle(cornerRadius: 7))
-                                    }else{
-                                        HStack{
-                                            Image(systemName: "play.fill")
-                                            Text("Audio")
-                                        }
-                                        .padding([.top, .bottom], 5)
-                                        .padding([.leading, .trailing], 14)
-                                        .background(.ultraThinMaterial)
-                                        .clipShape(RoundedRectangle(cornerRadius: 7))
-                                    }
+
+                                     } else {
+                                         if (data.id == playButtonId &&
+                                             soundManager.isPlaying == true){
+                                             HStack{
+                                                 Image(systemName: "pause.fill")
+                                                 Text("Audio")
+                                             }
+                                             .padding([.top, .bottom], 5)
+                                             .padding([.leading, .trailing], 14)
+                                             .clipShape(RoundedRectangle(cornerRadius: 7))
+                                         }else{
+                                             HStack{
+                                                 Image(systemName: "play.fill")
+                                                 Text("Audio")
+                                             }
+                                             .padding([.top, .bottom], 5)
+                                             .padding([.leading, .trailing], 14)
+                                             .clipShape(RoundedRectangle(cornerRadius: 7))
+                                         }
+
+                                     }
                                     
                                     
                                 }

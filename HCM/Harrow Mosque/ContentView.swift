@@ -45,7 +45,6 @@ struct ContentView: View {
                         GeometryReader { geometry in
                             NavigationView{
                                 List{
-                                    
                                     Section{
                                         VStack {
                                             Capsule()
@@ -75,7 +74,8 @@ struct ContentView: View {
                                         Text("3) Rotate phone until the red capsule is in line.").font(.system(size: 14))
                                     }
                                     .environment(\.defaultMinListRowHeight, 10)
-                                    
+                                    .listStyle(InsetGroupedListStyle()) // this has been renamed in iOS 14.*, as mentioned by @Elijah Yap
+                                    .environment(\.horizontalSizeClass, .regular)
                                 }
                             }
                             .offset(y: -40)
@@ -97,6 +97,8 @@ struct ContentView: View {
                                             .foregroundColor(.primary)
                                     }
                                 }
+                                .listStyle(InsetGroupedListStyle()) // this has been renamed in iOS 14.*, as mentioned by @Elijah Yap
+                                .environment(\.horizontalSizeClass, .regular)
                                 .navigationTitle("Settings")
                             }
                         }
@@ -122,60 +124,113 @@ struct FloatingTabbar : View {
     var body : some View{
         GeometryReader { geometry in
             HStack{
-                
                 Spacer(minLength: 0)
-                
-                HStack{
-                    if !self.expand{
-                        
-                        Button(action: {
+                if #available(iOS 15.0, *) {
+                    HStack{
+                        if !self.expand{
+                            
+                            Button(action: {
+                                self.expand.toggle()
+                            }) {
+                                Image(systemName: "arrow.left").foregroundColor(.green).padding()
+                            }
+                        }
+                        else{
+                            Button(action: {
+                                self.selected = 0
+                            }) {
+                                Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
+                            
+                            Spacer(minLength: 25)
+                            
+                            Button(action: {
+                                self.selected = 1
+                            }) {
+                                Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
+                            
+                            Spacer(minLength: 25)
+                            
+                            Button(action: {
+                                self.selected = 2
+                            }) {
+                                Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .init("title") : .primary).padding(.horizontal) .font(.system(size: 18))
+                            }
+                            
+                            Spacer(minLength: 25)
+                            
+                            Button(action: {
+                                self.selected = 3
+                            }) {
+                                Image(systemName: "gearshape.fill").foregroundColor(self.selected == 3 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
+                        }
+                    }.padding(.vertical,self.expand ? 20 : 8)
+                        .padding(.horizontal,self.expand ? 27 : 8)
+                        .background(.ultraThinMaterial)
+                        .background(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing).opacity(0.23))
+                        .cornerRadius(15)
+                        .padding(22)
+                    
+                        .onLongPressGesture {
+                            
                             self.expand.toggle()
-                        }) {
-                            Image(systemName: "arrow.left").foregroundColor(.green).padding()
                         }
-                    }
-                    else{
-                        Button(action: {
-                            self.selected = 0
-                        }) {
-                            Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+
+                } else {
+                    HStack{
+                        if !self.expand{
+                            
+                            Button(action: {
+                                self.expand.toggle()
+                            }) {
+                                Image(systemName: "arrow.left").foregroundColor(.green).padding()
+                            }
                         }
-                        
-                        Spacer(minLength: 25)
-                        
-                        Button(action: {
-                            self.selected = 1
-                        }) {
-                            Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                        else{
+                            Button(action: {
+                                self.selected = 0
+                            }) {
+                                Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
+                            
+                            Spacer(minLength: 25)
+                            
+                            Button(action: {
+                                self.selected = 1
+                            }) {
+                                Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
+                            
+                            Spacer(minLength: 25)
+                            
+                            Button(action: {
+                                self.selected = 2
+                            }) {
+                                Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .init("title") : .primary).padding(.horizontal) .font(.system(size: 18))
+                            }
+                            
+                            Spacer(minLength: 25)
+                            
+                            Button(action: {
+                                self.selected = 3
+                            }) {
+                                Image(systemName: "gearshape.fill").foregroundColor(self.selected == 3 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
                         }
-                        
-                        Spacer(minLength: 25)
-                        
-                        Button(action: {
-                            self.selected = 2
-                        }) {
-                            Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .init("title") : .primary).padding(.horizontal) .font(.system(size: 18))
+                    }.padding(.vertical,self.expand ? 20 : 8)
+                        .padding(.horizontal,self.expand ? 27 : 8)
+                        .background(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing).opacity(0.23))
+                        .cornerRadius(15)
+                        .padding(22)
+                    
+                        .onLongPressGesture {
+                            
+                            self.expand.toggle()
                         }
-                        
-                        Spacer(minLength: 25)
-                        
-                        Button(action: {
-                            self.selected = 3
-                        }) {
-                            Image(systemName: "gearshape.fill").foregroundColor(self.selected == 3 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
-                        }
-                    }
-                }.padding(.vertical,self.expand ? 20 : 8)
-                    .padding(.horizontal,self.expand ? 27 : 8)
-                    .background(.ultraThinMaterial)
-                    .background(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing).opacity(0.23))
-                    .cornerRadius(15)
-                    .padding(22)
-                
-                    .onLongPressGesture {
-                        
-                        self.expand.toggle()
-                    }
+
+                }
                 
             }
             .position(x: geometry.size.width / 2, y: geometry.size.height / 1.075 )
@@ -284,3 +339,4 @@ struct ContentView_Previews: PreviewProvider {
     
 }
 
+ 

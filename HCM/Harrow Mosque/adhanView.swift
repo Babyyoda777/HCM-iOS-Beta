@@ -9,6 +9,7 @@ import SwiftUI
 import Adhan
 import UIKit
 
+
 let now = Date()
 let twoDays: TimeInterval = 2 * 24 * 60 * 60
 let date = now
@@ -50,48 +51,89 @@ struct adhanView: View {
         }
     }
     
+    
     var body: some View {
         NavigationView{
+            if #available(iOS 15.0, *) {
             List{
-                Section{
-                    Text(date, style: .time)
-                        .fontWeight(.bold)
-                        .font(.system(size:40))
-                        .padding(.top, 5)
-                    Text(date, style: .date)
-                        .padding(.bottom, 5)
-                }.listRowBackground(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing))
-                Section{
-                    Text("Fajr     \(Image(systemName: "sun.haze.fill"))")
-                        .badge(fajr).foregroundColor(.primary)
-                }
-                Section{
-                    Text("Sunrise  \(Image(systemName: "sunrise.fill"))")
-                        .badge(sunrize).foregroundColor(.primary)
-                }
-                Section{
-                    Text("Zuhr     \(Image(systemName: "sun.max.fill"))")
-                        .badge(dhuhr).foregroundColor(.primary)
-                }
-                
-                Section{
-                    Text("Asr      \(Image(systemName: "sun.min.fill"))")
-                        .badge(asr).foregroundColor(.primary)
-                }
-                Section{
-                    Text("Maghrib  \(Image(systemName: "sunset.fill"))")
-                        .badge(maghrib).foregroundColor(.primary)
-                }
-                Section{
-                    Text("Isha     \(Image(systemName: "moon.stars.fill"))")
-                        .badge(isha).foregroundColor(.primary)
-                }
+                    Section{
+                        Text(date, style: .time)
+                            .fontWeight(.bold)
+                            .font(.system(size:40))
+                            .padding(.top, 5)
+                        Text(date, style: .date)
+                            .padding(.bottom, 5)
+                        
+                    }.listRowBackground(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing))
+                    Section{
+                        Text("Fajr     \(Image(systemName: "sun.haze.fill"))")
+                            .badge(fajr).foregroundColor(.primary)
+                    }
+                    Section{
+                        Text("Sunrise  \(Image(systemName: "sunrise.fill"))")
+                            .badge(sunrize).foregroundColor(.primary)
+                    }
+                    Section{
+                        Text("Zuhr     \(Image(systemName: "sun.max.fill"))")
+                            .badge(dhuhr).foregroundColor(.primary)
+                    }
+                    
+                    Section{
+                        Text("Asr      \(Image(systemName: "sun.min.fill"))")
+                            .badge(asr).foregroundColor(.primary)
+                    }
+                    Section{
+                        Text("Maghrib  \(Image(systemName: "sunset.fill"))")
+                            .badge(maghrib).foregroundColor(.primary)
+                    }
+                    Section{
+                        Text("Isha     \(Image(systemName: "moon.stars.fill"))")
+                            .badge(isha).foregroundColor(.primary)
+                    }
+                 
             }
             
             .navigationBarTitle("السلام عليكم")
             .navigationBarTitleTextColor(Color.init("title"))
             .padding(.bottom, -200)
-            
+        }
+            else{
+                List{
+                        Section{
+                            Text(date, style: .time)
+                                .fontWeight(.bold)
+                                .font(.system(size:40))
+                                .padding(.top, 5)
+                            Text(date, style: .date)
+                                .padding(.bottom, 5)
+                        }.listRowBackground(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing))
+                        Section{
+                            Text("Fajr     \(Image(systemName: "sun.haze.fill"))")
+                        }
+                        Section{
+                            Text("Sunrise  \(Image(systemName: "sunrise.fill"))")
+                        }
+                        Section{
+                            Text("Zuhr     \(Image(systemName: "sun.max.fill"))")
+                        }
+                        
+                        Section{
+                            Text("Asr      \(Image(systemName: "sun.min.fill"))")
+                        }
+                        Section{
+                            Text("Maghrib  \(Image(systemName: "sunset.fill"))")
+                        }
+                        Section{
+                            Text("Isha     \(Image(systemName: "moon.stars.fill"))")
+                        }
+                     
+                }
+                .navigationBarTitle("السلام عليكم")
+                .navigationBarTitleTextColor(Color.init("title"))
+                .padding(.bottom, -200)
+                .listStyle(InsetGroupedListStyle()) // this has been renamed in iOS 14.*, as mentioned by @Elijah Yap
+                .environment(\.horizontalSizeClass, .regular)
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         
@@ -125,3 +167,4 @@ extension View {
         return self
     }
 }
+

@@ -1,8 +1,8 @@
 //
 //  DetailSurahModel.swift
-//  QuranOnline
+//  Again
 //
-//  Created by Achmad Rifqi on 05/04/22.
+//  Created by Muhammad Shah on 05/08/22.
 //
 
 import Foundation
