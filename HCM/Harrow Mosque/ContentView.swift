@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Again
+//  Harrow Mosque
 //
-//  Created by Muhammad Shah on 11/08/2022.
+//  Created by Muhammad Shah on 12/08/2022.
 //
 
 import SwiftUI
@@ -13,26 +13,114 @@ import Combine
 import CoreLocation
 import UserNotifications
 
+let now = Date()
+let twoDays: TimeInterval = 2 * 24 * 60 * 60
+let date = now
 let coloredNavAppearance = UINavigationBarAppearance()
 struct ContentView: View {
-    init() {
-        UITableView.appearance().separatorColor = .clear
-        UITableView.appearance().isScrollEnabled = false
-        UITableView.appearance().sectionFooterHeight = 0
+    let cal = Calendar(identifier: Calendar.Identifier.gregorian)
+    let coordinates = Coordinates(latitude: 51.5806, longitude: 0.3420)
+    let size = UIScreen.main.bounds
+    
+    @State  var sunrize : String
+    @State  var fajr : String
+    @State var dhuhr : String
+    @State var asr : String
+    @State var maghrib : String
+    @State var isha : String
+    
+    @StateObject var feedViewModel = FeedViewModel()
+
+    func calculateTime()->Void{
+        let date = cal.dateComponents([.year, .month, .day], from: Date())
+        var params = CalculationMethod.moonsightingCommittee.params
+        params.madhab = .hanafi
+        params.adjustments.fajr = 5/2
+        params.adjustments.sunrise = 2
+        params.adjustments.dhuhr = 3
+        params.adjustments.maghrib = -1
+        params.adjustments.asr = 3
+        params.adjustments.isha = 3
+        if let prayers = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params) {
+            let formatter = DateFormatter()
+            formatter.timeStyle = .short
+            formatter.timeZone = TimeZone(identifier: "Europe/London")!
+            
+            self.sunrize = formatter.string(from: prayers.sunrise)
+            self.fajr = formatter.string(from: prayers.fajr)
+            self.dhuhr = formatter.string(from: prayers.dhuhr)
+            self.asr = formatter.string(from: prayers.asr)
+            self.maghrib = formatter.string(from: prayers.maghrib)
+            self.isha = formatter.string(from: prayers.isha)
+        }
     }
+
     @State private var showingOnboarding = false
     @State private var selected = 0
-    
-    
     @ObservedObject var compassHeading = CompassHeading()
-    
+
     var body: some View {
         
         ZStack{
             GeometryReader{ geometry in
                 VStack {
                     if self.selected == 0 {
-                        adhanView(sunrize: "1", fajr: "0", dhuhr: "0", asr: "0", maghrib: "0", isha: "0")
+                        NavigationView{
+
+                            List{
+                                    Section{
+                                        Text(date, style: .time)
+                                            .fontWeight(.bold)
+                                            .font(.system(size:40))
+                                            .padding(.top, 5)
+                                        Text(date, style: .date)
+                                            .padding(.bottom, 5)
+                                        
+                                    }.listRowBackground(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing))
+                                    .listRowSeparator(.hidden)
+                                    Section{
+                                        Text("Fajr     \(Image(systemName: "sun.haze.fill"))")
+                                            .badge(fajr).foregroundColor(.primary)
+                                    }
+                                    Section{
+                                        Text("Sunrise  \(Image(systemName: "sunrise.fill"))")
+                                            .badge(sunrize).foregroundColor(.primary)
+                                    }
+                                    Section{
+                                        Text("Zuhr     \(Image(systemName: "sun.max.fill"))")
+                                            .badge(dhuhr).foregroundColor(.primary)
+                                    }
+                                    
+                                    Section{
+                                        Text("Asr      \(Image(systemName: "sun.min.fill"))")
+                                            .badge(asr).foregroundColor(.primary)
+                                    }
+                                    Section{
+                                        Text("Maghrib  \(Image(systemName: "sunset.fill"))")
+                                            .badge(maghrib).foregroundColor(.primary)
+                                    }
+                                    Section{
+                                        Text("Isha     \(Image(systemName: "moon.stars.fill"))")
+                                            .badge(isha).foregroundColor(.primary)
+                                    }
+                                 
+                            }
+                            
+                            .navigationBarTitle("السلام عليكم")
+                            .navigationBarTitleTextColor(Color.init("title"))
+                            .padding(.bottom, -200)
+                        
+
+                        }
+                        .navigationViewStyle(StackNavigationViewStyle())
+                        
+                        .disabled(true)
+                        .onAppear(perform: {
+                            calculateTime()
+                        })
+                        .offset(y: -68)
+                        .padding(.bottom, -50)
+                        
                         
                     } else if self.selected == 1 {
                         GeometryReader { _ in
@@ -76,6 +164,7 @@ struct ContentView: View {
                                     .environment(\.defaultMinListRowHeight, 10)
                                     .listStyle(InsetGroupedListStyle()) // this has been renamed in iOS 14.*, as mentioned by @Elijah Yap
                                     .environment(\.horizontalSizeClass, .regular)
+                                    .listRowSeparator(.hidden)
                                 }
                             }
                             .offset(y: -40)
@@ -87,21 +176,58 @@ struct ContentView: View {
                             NavigationView{
                                 List{
                                     Section{
-                                        Text("No settings to change here! It's all built-in.")
+                                        Button("Schedule Notification") {
+                                            let content = UNMutableNotificationContent()
+                                            content.title = "Fajr is at \(fajr)"
+                                            content.subtitle = "Time to pray"
+                                            content.sound = UNNotificationSound.default
+
+                                            // show this notification five seconds from now
+                                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+                                            // choose a random identifier
+                                            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                                            // add our notification request
+                                            UNUserNotificationCenter.current().add(request)
+                                        }
                                     }
-                                  
+                                    .listRowSeparator(.hidden)
                                     Section{
-                                        Link("Donate to Harrow Mosque  \(Image(systemName: "link"))", destination: URL(string: "https://paypal.com/donate/?hosted_button_id=FF9AN9AKM8BXS&source=url")!)
+                                        Link("\(Image(systemName: "link")) Donate to Harrow Mosque  ", destination: URL(string: "https://paypal.com/donate/?hosted_button_id=FF9AN9AKM8BXS&source=url")!)
                                             .foregroundColor(.primary)
-                                        Link("Find out more about me!  \(Image(systemName: "link"))", destination: URL(string: "https://babyyoda777.github.io")!)
+                                        Link("\(Image(systemName: "link")) Find out more about me!  ", destination: URL(string: "https://babyyoda777.github.io")!)
                                             .foregroundColor(.primary)
-                                    }
+                                    }.listRowSeparator(.hidden)
+                                    Section{
+                                        Link("\(Image(systemName: "play.rectangle.fill"))    YouTube ", destination: URL(string: "https://www.youtube.com/user/harrowmosque/videos")!)
+                                            .foregroundColor(.primary)
+                                    }.listRowSeparator(.hidden)
+                                    Section{
+                                        Link("\(Image(systemName: "camera.metering.center.weighted"))   Instagram ", destination: URL(string: "https://www.instagram.com/harrowmosque/")!)
+                                            .foregroundColor(.primary)
+                                    }.listRowSeparator(.hidden)
+                                    Section{
+                                        Link("\(Text("f").fontWeight(.bold).font(.system(size: 30)))      FaceBook ", destination: URL(string: "https://www.facebook.com/HarrowMosque")!)
+                                            .foregroundColor(.primary)
+                                    }.listRowSeparator(.hidden)
                                 }
                                 .listStyle(InsetGroupedListStyle()) // this has been renamed in iOS 14.*, as mentioned by @Elijah Yap
                                 .environment(\.horizontalSizeClass, .regular)
-                                .navigationTitle("Settings")
+                                .navigationTitle("Contact Us")
                             }
                         }
+                    }
+                    else if self.selected == 4 {
+                        GeometryReader { _ in
+                            if feedViewModel.isLoading {
+                                LoadingView()
+                            } else {
+                                RSSListView(rssItems: feedViewModel.rssItems)
+                            }
+
+                        }
+                        
                     }
                 }
                 .frame(height: geometry.size.height + 40)
@@ -142,7 +268,7 @@ struct FloatingTabbar : View {
                                 Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
                             }
                             
-                            Spacer(minLength: 25)
+                            Spacer(minLength: 10)
                             
                             Button(action: {
                                 self.selected = 1
@@ -150,15 +276,22 @@ struct FloatingTabbar : View {
                                 Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
                             }
                             
-                            Spacer(minLength: 25)
+                            Spacer(minLength: 10)
                             
                             Button(action: {
                                 self.selected = 2
                             }) {
                                 Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .init("title") : .primary).padding(.horizontal) .font(.system(size: 18))
                             }
+                            Spacer(minLength: 10)
                             
-                            Spacer(minLength: 25)
+                            Button(action: {
+                                self.selected = 4
+                            }) {
+                                Image(systemName: "rectangle.3.offgrid.fill").foregroundColor(self.selected == 4 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
+                            }
+
+                            Spacer(minLength: 10)
                             
                             Button(action: {
                                 self.selected = 3
@@ -167,64 +300,12 @@ struct FloatingTabbar : View {
                             }
                         }
                     }.padding(.vertical,self.expand ? 20 : 8)
-                        .padding(.horizontal,self.expand ? 27 : 8)
+                        .padding(.horizontal,self.expand ? 15 : 8)
                         .background(.ultraThinMaterial)
                         .background(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing).opacity(0.23))
                         .cornerRadius(15)
                         .padding(22)
-                    
-                        .onLongPressGesture {
-                            
-                            self.expand.toggle()
-                        }
-
-                } else {
-                    HStack{
-                        if !self.expand{
-                            
-                            Button(action: {
-                                self.expand.toggle()
-                            }) {
-                                Image(systemName: "arrow.left").foregroundColor(.green).padding()
-                            }
-                        }
-                        else{
-                            Button(action: {
-                                self.selected = 0
-                            }) {
-                                Image(systemName: "clock.fill").foregroundColor(self.selected == 0 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
-                            }
-                            
-                            Spacer(minLength: 25)
-                            
-                            Button(action: {
-                                self.selected = 1
-                            }) {
-                                Image(systemName: "book.fill").foregroundColor(self.selected == 1 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
-                            }
-                            
-                            Spacer(minLength: 25)
-                            
-                            Button(action: {
-                                self.selected = 2
-                            }) {
-                                Image(systemName: "location.circle.fill").foregroundColor(self.selected == 2 ? .init("title") : .primary).padding(.horizontal) .font(.system(size: 18))
-                            }
-                            
-                            Spacer(minLength: 25)
-                            
-                            Button(action: {
-                                self.selected = 3
-                            }) {
-                                Image(systemName: "gearshape.fill").foregroundColor(self.selected == 3 ? .init("title") : .primary).padding(.horizontal).font(.system(size: 18))
-                            }
-                        }
-                    }.padding(.vertical,self.expand ? 20 : 8)
-                        .padding(.horizontal,self.expand ? 27 : 8)
-                        .background(LinearGradient(gradient: Gradient(colors: [.init("c1"), .init("c2")]), startPoint: .leading, endPoint: .trailing).opacity(0.23))
-                        .cornerRadius(15)
-                        .padding(22)
-                    
+                        .offset(y: 3)
                         .onLongPressGesture {
                             
                             self.expand.toggle()
@@ -330,13 +411,21 @@ class CompassHeading: NSObject, ObservableObject, CLLocationManagerDelegate {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        
-    }
-    
-    
-}
+
 
  
+extension View {
+    /// Sets the text color for a navigation bar title.
+    /// - Parameter color: Color the title should be
+    ///
+    /// Supports both regular and large titles.
+    @available(iOS 14, *)
+    func navigationBarTitleTextColor(_ color: Color) -> some View {
+        let uiColor = UIColor(color)
+        UITableView.appearance().sectionHeaderHeight = .zero
+        // Set appearance for both normal and large sizes.
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: uiColor ]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: uiColor ]
+        return self
+    }
+}

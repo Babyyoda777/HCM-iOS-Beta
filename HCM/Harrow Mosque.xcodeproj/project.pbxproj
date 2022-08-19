@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB04469128A9280E0068BE49 /* adhanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB04469028A9280E0068BE49 /* adhanView.swift */; };
+		BB22156928AECBD600D4B006 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB22156828AECBD600D4B006 /* FeedKit */; };
 		BB2BC69A28A64543002F25D7 /* CompassMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BC69928A64540002F25D7 /* CompassMarkerView.swift */; };
 		BB2BC69C28A6455E002F25D7 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BC69B28A6455C002F25D7 /* Marker.swift */; };
 		BB2BC69F28A6645D002F25D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2BC69E28A6645D002F25D7 /* Assets.xcassets */; };
+		BB6D93F128AF82CA00AD9E52 /* RSSListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93E828AF82CA00AD9E52 /* RSSListItemView.swift */; };
+		BB6D93F228AF82CA00AD9E52 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93E928AF82CA00AD9E52 /* HTMLView.swift */; };
+		BB6D93F328AF82CA00AD9E52 /* RSSListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93EA28AF82CA00AD9E52 /* RSSListView.swift */; };
+		BB6D93F428AF82CA00AD9E52 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93EB28AF82CA00AD9E52 /* LoadingView.swift */; };
+		BB6D93F528AF82CA00AD9E52 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93ED28AF82CA00AD9E52 /* FeedViewModel.swift */; };
+		BB6D93F628AF82CA00AD9E52 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93EF28AF82CA00AD9E52 /* RSSItem.swift */; };
+		BB6D93F728AF82CA00AD9E52 /* FeedParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6D93F028AF82CA00AD9E52 /* FeedParserService.swift */; };
 		BBA205AF28A7CC1E000993B5 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205AC28A7CC1E000993B5 /* ApiServices.swift */; };
 		BBA205B028A7CC1E000993B5 /* SurahDetailServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205AD28A7CC1E000993B5 /* SurahDetailServices.swift */; };
 		BBA205B328A7CE5A000993B5 /* QuranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA205B228A7CE59000993B5 /* QuranView.swift */; };
@@ -26,10 +33,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB04469028A9280E0068BE49 /* adhanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adhanView.swift; sourceTree = "<group>"; };
 		BB2BC69928A64540002F25D7 /* CompassMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassMarkerView.swift; sourceTree = "<group>"; };
 		BB2BC69B28A6455C002F25D7 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		BB2BC69E28A6645D002F25D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB6D93E828AF82CA00AD9E52 /* RSSListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSListItemView.swift; sourceTree = "<group>"; };
+		BB6D93E928AF82CA00AD9E52 /* HTMLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
+		BB6D93EA28AF82CA00AD9E52 /* RSSListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSListView.swift; sourceTree = "<group>"; };
+		BB6D93EB28AF82CA00AD9E52 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BB6D93ED28AF82CA00AD9E52 /* FeedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		BB6D93EF28AF82CA00AD9E52 /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
+		BB6D93F028AF82CA00AD9E52 /* FeedParserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParserService.swift; sourceTree = "<group>"; };
 		BB80DEC628A80FDA00762406 /* HCM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA205AC28A7CC1E000993B5 /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		BBA205AD28A7CC1E000993B5 /* SurahDetailServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurahDetailServices.swift; sourceTree = "<group>"; };
@@ -48,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB22156928AECBD600D4B006 /* FeedKit in Frameworks */,
 				BBDF255A28A51E5800643033 /* UIOnboarding in Frameworks */,
 				BBED71E128A55636006C9EA2 /* Adhan in Frameworks */,
 			);
@@ -56,6 +70,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB6D93E728AF82CA00AD9E52 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB6D93E828AF82CA00AD9E52 /* RSSListItemView.swift */,
+				BB6D93E928AF82CA00AD9E52 /* HTMLView.swift */,
+				BB6D93EA28AF82CA00AD9E52 /* RSSListView.swift */,
+				BB6D93EB28AF82CA00AD9E52 /* LoadingView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB6D93EC28AF82CA00AD9E52 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				BB6D93ED28AF82CA00AD9E52 /* FeedViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		BB6D93EE28AF82CA00AD9E52 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BB6D93EF28AF82CA00AD9E52 /* RSSItem.swift */,
+				BB6D93F028AF82CA00AD9E52 /* FeedParserService.swift */,
+			);
+			name = model;
+			path = "../../../rss-reader-ios-main/rss-correct/model";
+			sourceTree = "<group>";
+		};
 		BBA205AB28A7CC1E000993B5 /* Web Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,9 +133,11 @@
 				BB2BC69928A64540002F25D7 /* CompassMarkerView.swift */,
 				BB2BC69B28A6455C002F25D7 /* Marker.swift */,
 				BBA205B228A7CE59000993B5 /* QuranView.swift */,
+				BB6D93EE28AF82CA00AD9E52 /* model */,
+				BB6D93E728AF82CA00AD9E52 /* view */,
+				BB6D93EC28AF82CA00AD9E52 /* viewmodel */,
 				BBDF254828A51DE000643033 /* ContentView.swift */,
 				BBDF255528A51E1200643033 /* OnboardingView.swift */,
-				BB04469028A9280E0068BE49 /* adhanView.swift */,
 				BBDF255428A51E1200643033 /* UIOnboardingHelper.swift */,
 				BBA205B428A7CE93000993B5 /* Model */,
 				BB2BC69E28A6645D002F25D7 /* Assets.xcassets */,
@@ -120,6 +165,7 @@
 			packageProductDependencies = (
 				BBDF255928A51E5800643033 /* UIOnboarding */,
 				BBED71E028A55636006C9EA2 /* Adhan */,
+				BB22156828AECBD600D4B006 /* FeedKit */,
 			);
 			productName = Again;
 			productReference = BB80DEC628A80FDA00762406 /* HCM.app */;
@@ -157,6 +203,7 @@
 				BBF2AEBF28AD57440021C04B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BBF2AEC228AD577B0021C04B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				BBF2AEC528AD57C20021C04B /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				BB22156728AECBD600D4B006 /* XCRemoteSwiftPackageReference "FeedKit" */,
 			);
 			productRefGroup = BBDF253A28A51DE000643033;
 			projectDirPath = "";
@@ -186,15 +233,21 @@
 			files = (
 				BBA205BC28A7CE93000993B5 /* DetailSurahModel.swift in Sources */,
 				BBA205B328A7CE5A000993B5 /* QuranView.swift in Sources */,
+				BB6D93F128AF82CA00AD9E52 /* RSSListItemView.swift in Sources */,
 				BB2BC69A28A64543002F25D7 /* CompassMarkerView.swift in Sources */,
+				BB6D93F728AF82CA00AD9E52 /* FeedParserService.swift in Sources */,
 				BBA205AF28A7CC1E000993B5 /* ApiServices.swift in Sources */,
 				BBDF255628A51E1200643033 /* UIOnboardingHelper.swift in Sources */,
-				BB04469128A9280E0068BE49 /* adhanView.swift in Sources */,
 				BBA205BB28A7CE93000993B5 /* SurahModel.swift in Sources */,
+				BB6D93F228AF82CA00AD9E52 /* HTMLView.swift in Sources */,
+				BB6D93F428AF82CA00AD9E52 /* LoadingView.swift in Sources */,
 				BBDF255728A51E1200643033 /* OnboardingView.swift in Sources */,
+				BB6D93F328AF82CA00AD9E52 /* RSSListView.swift in Sources */,
 				BBDF254928A51DE000643033 /* ContentView.swift in Sources */,
 				BBDF254728A51DE000643033 /* HarrowMosqueApp.swift in Sources */,
 				BBA205B028A7CC1E000993B5 /* SurahDetailServices.swift in Sources */,
+				BB6D93F628AF82CA00AD9E52 /* RSSItem.swift in Sources */,
+				BB6D93F528AF82CA00AD9E52 /* FeedViewModel.swift in Sources */,
 				BB2BC69C28A6455E002F25D7 /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +388,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,7 +421,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,6 +459,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB22156728AECBD600D4B006 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		BBDF255828A51E5800643033 /* XCRemoteSwiftPackageReference "UIOnboarding" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lascic/UIOnboarding.git";
@@ -465,6 +526,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB22156828AECBD600D4B006 /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB22156728AECBD600D4B006 /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
 		BBDF255928A51E5800643033 /* UIOnboarding */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBDF255828A51E5800643033 /* XCRemoteSwiftPackageReference "UIOnboarding" */;

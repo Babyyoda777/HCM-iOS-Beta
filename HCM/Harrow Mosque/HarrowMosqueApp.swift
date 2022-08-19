@@ -14,7 +14,7 @@ struct HarrowMosque: App {
     var body: some Scene {
         WindowGroup {
             
-            ContentView()
+            ContentView(sunrize: "1", fajr: "0", dhuhr: "0", asr: "0", maghrib: "0", isha: "0")
         }
     }
 }

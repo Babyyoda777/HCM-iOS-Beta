@@ -1,9 +1,10 @@
 //
-//  HomeView.swift
-//  QuranOnline
+//  QuranView.swift
+//  Harrow Mosque
 //
-//  Created by Achmad Rifqi on 04/04/22.
+//  Created by Muhammad Shah on 12/08/2022.
 //
+
 
 import SwiftUI
 import AVKit

@@ -1,9 +1,10 @@
 //
 //  SurahModel.swift
-//  Again
+//  Harrow Mosque
 //
-//  Created by Muhammad Shah on 10/08/22.
+//  Created by Muhammad Shah on 12/08/2022.
 //
+
 
 import Foundation
 import SwiftUI
